@@ -60,7 +60,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-    // creating an array with 3 parameters//
+    // creating an array//
     var sumMult = [];
     // calling sum function to do the addition
     var sum1 = sum(a, b);
@@ -95,15 +95,32 @@ testSumAndMultiply(4, 7, 5);
 //     Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 //     // Write your code here
-//     var testArray = [2, 3, 4]; //eslint-disable-line
+var testArray = [2, 3, 4]; //eslint-disable-line
 
-//     function sumArray(sumArr) { //eslint-disable-line
+function sumArray(testArray) { //eslint-disable-line
+    var SumArray = testArray;
+    var add2 = sum(testArray[0], testArray[1]);
+    var add3 = sum(add2[0], testArray[2]);
+    sumArray[0] = add3[0];
+    sumArray[1] = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + add3[0] + ' is their sum.';
+    console.log(sumArray[0]);
+    console.log(sumArray[1]);
+    testArray = sumArray;
+    console.log(testArray[0]);
+    console.log(testArray[1]);
+    return sumArray;
 
-//     }
 
-//     // Here is the test for sumArray(); uncomment it to run it
 
-//     // testSumArray(testArray);
+
+
+
+
+}
+
+// Here is the test for sumArray(); uncomment it to run it
+
+testSumArray(testArray);
 
 //     // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
